@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_search_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/common_cancle"
+                android:textColor="#2997f0"
+                android:textSize="17sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_pop_search"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/rl_search_cancle"
+            android:background="@drawable/bg_search_selector">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@mipmap/icon_search_straight"/>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/iv_search"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_search_clear"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@mipmap/icon_bg_text_clear"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/style_cutline"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/ll_search"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_search_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_history_tip"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="最近搜索"
+                android:textColor="#aaaaaa"
+                android:textSize="13dp"/>
+
+            <ImageView
+                android:id="@+id/iv_history_clear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@mipmap/clear_search_history"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_history_tip"
+            android:layout_marginTop="16dp">
+
+            <xzg.serachview.wigit.TagFlowLayout
+                android:id="@+id/flowlayout_search_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:max_select="1">
+
+            </xzg.serachview.wigit.TagFlowLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_can_searched_here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_search_history"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="52dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <View
+                android:id="@+id/line_left"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/tv_line_info"
+                android:background="#EBEBEB"/>
+
+            <TextView
+                android:id="@+id/tv_line_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="在这里可以搜索到"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/tv_line_info"
+                android:background="#EBEBEB"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_prompt_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="52dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_prompt_contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/can_searched_here_user"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="联系人"
+                    android:textColor="#aaaaaa"
+                    android:textSize="13dp"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_prompt_company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/can_searched_here_contact"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="企业通讯录"
+                    android:textColor="#aaaaaa"
+                    android:textSize="13dp"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_prompt_chat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv3"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/can_searched_here_group"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="群聊"
+                    android:textColor="#aaaaaa"
+                    android:textSize="13dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

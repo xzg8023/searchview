@@ -1,0 +1,3 @@
+include  ':serachview'
+
+//':app', ':slidemenu',':Utils', ':h5', ':mylibrary', ':myapplication', ':ExpandableListView', ':rxjava', ':serachview', ':rejava', ':drawable'

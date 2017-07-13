@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SearchView">
+        <attr name="hintText" format="string" />
+        <attr name="showHistory" format="boolean"/>
+        <attr name="showPromptInfo" format="boolean"/>
+        <attr name="showContactPrompt" format="boolean"/>
+        <attr name="showCompanyPrompt" format="boolean"/>
+        <attr name="showChatGroupPrompt" format="boolean"/>
+        <attr name="delayMilliSecond" format="integer"/>
+
+    </declare-styleable>
+</resources>
